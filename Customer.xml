@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customers>
+    <customer>
+        <name>Jorge</name>
+        <surname>Vázquez</surname>
+        <telephone>666555444</telephone>
+        <location>
+            <country>Spain</country>
+            <city>Zaragoza</city>
+            <postalCode>50000</postalCode>    
+        </location>     
+    </customer>
+    <customer>
+        <name>Sergio</name>
+        <surname>Galvez</surname>
+        <telephone>666333222</telephone>
+        <location>
+            <country>United States</country>
+            <city>Las Vegas</city>
+            <postalCode>60000</postalCode>    
+        </location>     
+    </customer>
+    <customer>
+        <name>Jaszi</name>
+        <surname>Singh</surname>
+        <telephone>666333111</telephone>
+        <location>
+            <country>India</country>
+            <city>Nueva Delhi</city>
+            <postalCode>80000</postalCode>    
+        </location>     
+    </customer>
+</customers>
