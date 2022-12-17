@@ -29,7 +29,7 @@ public class ModifyProductsPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form LoginPanel. ModifyProductsPanel class Constructor.
-     * 
+     *
      * @param workPanel WorkPanel, its the work area of the APP.
      * @param user Its object that references a user row in DB. It matches with
      * the product with the same name.
@@ -80,9 +80,8 @@ public class ModifyProductsPanel extends javax.swing.JPanel {
         this.errorLabel.setVisible(true);
         this.successLabel.setVisible(false);
     }
-    
-        
-    public void setSuccessLabel(){
+
+    public void setSuccessLabel() {
         this.errorLabel.setVisible(false);
         this.successLabel.setVisible(true);
     }
@@ -95,8 +94,8 @@ public class ModifyProductsPanel extends javax.swing.JPanel {
             this.errorLabel.setText(exception.getMessage());
         }
     }
-    
-    public void clearProductTable(){
+
+    public void clearProductTable() {
         this.productTable.setModel(this.productTableModel);
         productTableModel.setRowCount(0);
     }
@@ -582,7 +581,7 @@ public class ModifyProductsPanel extends javax.swing.JPanel {
             float weight = (float) this.weightSpinner.getValue();
             float stock = (int) this.stockSpinner.getValue();
             Product product = (Product) this.productService.findOneByDescription(this.productComboBox.getSelectedItem().toString());
-            product = this.productService.modifyProduct(product, description, price, weight, (int) stock);
+            product = this.productService.updateByDescriptionPriceWeightAndStock(product, description, price, weight, (int) stock);
             this.productService.update(product);
         } catch (Exception exception) {
             setErrorLabel();

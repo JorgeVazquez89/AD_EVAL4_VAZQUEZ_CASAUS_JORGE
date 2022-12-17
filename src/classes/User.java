@@ -1,5 +1,5 @@
 package classes;
-// Generated 11-dic-2022 21:47:38 by Hibernate Tools 4.3.1
+// Generated 17-dic-2022 22:17:30 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -23,7 +23,7 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @Table(name="user"
     ,catalog="virtual_market"
-    , uniqueConstraints = {@UniqueConstraint(columnNames="email"), @UniqueConstraint(columnNames="userName")} 
+    , uniqueConstraints = @UniqueConstraint(columnNames="email") 
 )
 public class User  implements java.io.Serializable {
 
@@ -33,7 +33,6 @@ public class User  implements java.io.Serializable {
      private String email;
      private String password;
      private int age;
-     private boolean login;
      private Date entryDate;
      private Date modificationDate;
      private Set<Order> orders = new HashSet<Order>(0);
@@ -42,20 +41,18 @@ public class User  implements java.io.Serializable {
     }
 
 	
-    public User(String userName, String email, String password, int age, boolean login, Date entryDate) {
+    public User(String userName, String email, String password, int age, Date entryDate) {
         this.userName = userName;
         this.email = email;
         this.password = password;
         this.age = age;
-        this.login = login;
         this.entryDate = entryDate;
     }
-    public User(String userName, String email, String password, int age, boolean login, Date entryDate, Date modificationDate, Set<Order> orders) {
+    public User(String userName, String email, String password, int age, Date entryDate, Date modificationDate, Set<Order> orders) {
        this.userName = userName;
        this.email = email;
        this.password = password;
        this.age = age;
-       this.login = login;
        this.entryDate = entryDate;
        this.modificationDate = modificationDate;
        this.orders = orders;
@@ -74,7 +71,7 @@ public class User  implements java.io.Serializable {
     }
 
     
-    @Column(name="userName", unique=true, nullable=false, length=50)
+    @Column(name="userName", nullable=false, length=50)
     public String getUserName() {
         return this.userName;
     }
@@ -111,16 +108,6 @@ public class User  implements java.io.Serializable {
     
     public void setAge(int age) {
         this.age = age;
-    }
-
-    
-    @Column(name="login", nullable=false)
-    public boolean isLogin() {
-        return this.login;
-    }
-    
-    public void setLogin(boolean login) {
-        this.login = login;
     }
 
     @Temporal(TemporalType.TIMESTAMP)

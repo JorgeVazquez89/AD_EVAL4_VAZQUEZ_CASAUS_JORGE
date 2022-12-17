@@ -390,7 +390,7 @@ public class RegisterPanel extends javax.swing.JPanel {
             this.userService.isValidUserName(userName);
             this.userService.isValidEmail(email);
             this.userService.isValidPassword(password);
-            User user = this.userService.createNewUser(userName, email, password, age);
+            User user = this.userService.createByNameEmailPasswordAndAge(userName, email, password, age);
             this.userService.save(user);
             setSuccessLabel();
             this.areYouRegisteredLabel.setForeground(Color.decode(Style.GREEN_CODE_COLOR));

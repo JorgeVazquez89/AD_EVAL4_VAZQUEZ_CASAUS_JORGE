@@ -43,6 +43,6 @@ Contributor(s):
   <schema-selection match-catalog="virtual_market"/>
   <table-filter match-name="user"/>
   <table-filter match-name="product"/>
-  <table-filter match-name="orderProduct"/>
   <table-filter match-name="order"/>
+  <table-filter match-name="orderProduct"/>
 </hibernate-reverse-engineering>

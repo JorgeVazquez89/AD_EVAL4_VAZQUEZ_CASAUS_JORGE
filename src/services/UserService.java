@@ -115,9 +115,9 @@ public class UserService {
      * @return user Its object that references a user row in DB. It matches with
      * the product with the same name.
      */
-    public User createNewUser(String userName, String email, String password, int age) {
+    public User createByNameEmailPasswordAndAge(String userName, String email, String password, int age) {
         Timestamp now = Timestamp.valueOf(LocalDateTime.now());
-        User user = new User(userName, email, password, age, false, now);
+        User user = new User(userName, email, password, age, now);
         user.setId(null);
         user.setModificationDate(null);
         return user;

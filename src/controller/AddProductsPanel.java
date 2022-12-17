@@ -620,7 +620,7 @@ public class AddProductsPanel extends javax.swing.JPanel {
             float price = (float) this.priceSpinner.getValue();
             float weight = (float) this.weightSpinner.getValue();
             float stock = (int) this.stockSpinner.getValue();
-            Product product = this.productService.createNewProduct(description, price, weight, (int) stock);
+            Product product = this.productService.createByDescriptionPriceWeightAndStock(description, price, weight, (int) stock);
             this.productService.save(product);
             getAll();
             print();

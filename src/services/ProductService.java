@@ -83,7 +83,7 @@ public class ProductService {
      * @return a product that is an object that references a Product row in DB. It
      * matches with the product with the same name.
      */
-    public Product createNewProduct(String description, float price, float weight, int stock) {
+    public Product createByDescriptionPriceWeightAndStock(String description, float price, float weight, int stock) {
         Timestamp now = getTimeStamp();
         Product product = new Product(description, price, weight, stock, now);
         product.setId(null);
@@ -117,7 +117,7 @@ public class ProductService {
      * @param stock Is the stock attribute from a product as int.
      * @return product object.
      */
-    public Product modifyProduct(Product product, String description, float price,
+    public Product updateByDescriptionPriceWeightAndStock(Product product, String description, float price,
             float weight, int stock) {
         product.setDescription(description);
         product.setPrice(price);

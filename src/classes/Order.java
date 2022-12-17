@@ -1,4 +1,6 @@
 package classes;
+// Generated 17-dic-2022 22:17:30 by Hibernate Tools 4.3.1
+
 
 import java.util.Date;
 import java.util.HashSet;
@@ -41,7 +43,6 @@ public class Order  implements java.io.Serializable {
         this.description = description;
         this.entryDate = entryDate;
     }
-    
     public Order(User user, String description, Date entryDate, Set<OrderProduct> orderProducts) {
        this.user = user;
        this.description = description;

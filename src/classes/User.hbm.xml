@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 11-dic-2022 21:47:38 by Hibernate Tools 4.3.1 -->
+<!-- Generated 17-dic-2022 22:17:30 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="classes.User" table="user" catalog="virtual_market" optimistic-lock="version">
         <id name="id" type="java.lang.Integer">
@@ -9,7 +9,7 @@
             <generator class="identity" />
         </id>
         <property name="userName" type="string">
-            <column name="userName" length="50" not-null="true" unique="true" />
+            <column name="userName" length="50" not-null="true" />
         </property>
         <property name="email" type="string">
             <column name="email" length="250" not-null="true" unique="true" />
@@ -19,9 +19,6 @@
         </property>
         <property name="age" type="int">
             <column name="age" not-null="true" />
-        </property>
-        <property name="login" type="boolean">
-            <column name="login" not-null="true" />
         </property>
         <property name="entryDate" type="timestamp">
             <column name="entryDate" length="19" not-null="true" />
