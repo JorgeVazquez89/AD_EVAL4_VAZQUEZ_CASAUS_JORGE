@@ -102,7 +102,7 @@ public class ProductRepository {
     /**
      * Delete a product from DB.
      *
-     * @param product
+     * @param product Is an object that references a Product row in DB. It
      * @throws Exception If cant delete, sends the exception to ProductService.
      */
     public void delete(Product product) throws Exception {

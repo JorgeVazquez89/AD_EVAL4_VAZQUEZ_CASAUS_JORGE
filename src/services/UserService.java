@@ -112,7 +112,8 @@ public class UserService {
      * column in User table of DB with the same name.
      * @param age Its the age of user. It matches with the column in User table
      * of DB with the same name.
-     * @return
+     * @return user Its object that references a user row in DB. It matches with
+     * the product with the same name.
      */
     public User createNewUser(String userName, String email, String password, int age) {
         Timestamp now = Timestamp.valueOf(LocalDateTime.now());

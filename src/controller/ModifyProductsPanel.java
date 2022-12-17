@@ -29,6 +29,10 @@ public class ModifyProductsPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form LoginPanel. ModifyProductsPanel class Constructor.
+     * 
+     * @param workPanel WorkPanel, its the work area of the APP.
+     * @param user Its object that references a user row in DB. It matches with
+     * the product with the same name.
      */
     public ModifyProductsPanel(JPanel workPanel, User user) {
         try {

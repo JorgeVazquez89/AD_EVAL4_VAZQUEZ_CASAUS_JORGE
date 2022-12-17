@@ -14,7 +14,7 @@ import resources.style.Style;
  * @version 1.0.
  * @see AddProductsPanel
  * @see AvabibleProductsPanel
- * @see BuyProductPanel
+ * @see BuyProductsPanel
  * @see DashBoard
  * @see LoginPanel
  * @see ModifyProductsPanel
@@ -65,6 +65,9 @@ public class LoadPanels {
     /**
      * Creates, load an paint AvabibleProductsPanel as Main GUI into DashBoard
      * workPanel.
+
+     * @param user Its object that references a user row in DB. It matches with
+     * the product with the same name.
      */
     public void loadAvabibleProductsPanel(User user) {
         AvabibleProductsPanel avabibleProductsPanel = new AvabibleProductsPanel(this.workPanel, user);
@@ -79,6 +82,9 @@ public class LoadPanels {
     /**
      * Creates, load an paint AddproductsPanel as Main GUI into DashBoard
      * workPanel.
+     * 
+     * @param user Its object that references a user row in DB. It matches with
+     * the product with the same name.
      */
     public void loadAddProductsPanel(User user) {
         AddProductsPanel addproductsPanel = new AddProductsPanel(this.workPanel, user);
@@ -93,6 +99,9 @@ public class LoadPanels {
     /**
      * Creates, load an paint ModifyProductsPanel as Main GUI into DashBoard
      * workPanel.
+     * 
+     * @param user Its object that references a user row in DB. It matches with
+     * the product with the same name.
      */
     public void loadModifyProductsPanel(User user) {
         ModifyProductsPanel modifyProductsPanel = new ModifyProductsPanel(this.workPanel, user);
@@ -107,6 +116,9 @@ public class LoadPanels {
     /**
      * Creates, load an paint BuyProductsPanel as Main GUI into DashBoard
      * workPanel.
+     * 
+     * @param user Its object that references a user row in DB. It matches with
+     * the product with the same name.
      */
     public void loadBuyProductsPanel(User user) {
         BuyProductsPanel buyProductsPanel = new BuyProductsPanel(this.workPanel, user);

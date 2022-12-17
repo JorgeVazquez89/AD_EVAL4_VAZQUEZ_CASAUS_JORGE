@@ -49,7 +49,8 @@ public class ProductService {
      *
      * @param description Is the description attribute from a product as String.
      * It matches with the Product table column called with the same name.
-     * @return
+     * @return product Is an object that references a Product row in DB. It
+     * matches with the product with the same name. 
      * @throws Exception If the list is empty, sends the error from repository to
      * the controller,
      */

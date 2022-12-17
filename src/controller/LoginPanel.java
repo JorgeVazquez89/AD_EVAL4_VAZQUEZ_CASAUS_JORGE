@@ -26,6 +26,8 @@ public class LoginPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form LoginPanel. LoginPanel class Constructor.
+     *
+     * @param workPanel WorkPanel, its the work area of the APP.
      */
     public LoginPanel(JPanel workPanel) {
         try {
@@ -413,7 +415,7 @@ public class LoginPanel extends javax.swing.JPanel {
     private void loginButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseEntered
         this.loginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource(resources.style.Style.LOGIN_HOVER_BUTTON)));
     }//GEN-LAST:event_loginButtonMouseEntered
-    
+
     /**
      * Recover the original icon of the login button.
      *
@@ -423,7 +425,7 @@ public class LoginPanel extends javax.swing.JPanel {
         this.loginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource(resources.style.Style.LOGIN_BUTTON)));
     }//GEN-LAST:event_loginButtonMouseExited
 
-     /**
+    /**
      * Set the icon of the login button for clicked one.
      *
      * @param evt Default event for Mouse Pressed.
@@ -431,7 +433,7 @@ public class LoginPanel extends javax.swing.JPanel {
     private void loginButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMousePressed
         this.loginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource(resources.style.Style.LOGIN_CLICKED_BUTTON)));
     }//GEN-LAST:event_loginButtonMousePressed
-    
+
     /**
      * Recover the original icon of the login button when mouse released.
      *
@@ -440,8 +442,8 @@ public class LoginPanel extends javax.swing.JPanel {
     private void loginButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginButtonMouseReleased
         this.loginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource(resources.style.Style.LOGIN_BUTTON)));
     }//GEN-LAST:event_loginButtonMouseReleased
-    
-     /**
+
+    /**
      * Loads the RegisterPanel.
      *
      * @param evt Default event for Action Performed.
@@ -450,10 +452,10 @@ public class LoginPanel extends javax.swing.JPanel {
         LoadPanels loadPanels = new LoadPanels(this.workPanel);
         loadPanels.loadRegisterPanel();
     }//GEN-LAST:event_createAnAccountButtonActionPerformed
-    
+
     /**
      * Set purple the text color when mouse entered in the button.
-     * 
+     *
      * @param evt Defaut event for Mouse Entered.
      */
     private void createAnAccountButtonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createAnAccountButtonMouseEntered
@@ -462,31 +464,31 @@ public class LoginPanel extends javax.swing.JPanel {
 
     /**
      * Recover the original blue color when mouse exited of the button.
-     * 
+     *
      * @param evt Defaut event for Mouse Exited.
      */
     private void createAnAccountButtonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createAnAccountButtonMouseExited
         this.createAnAccountButton.setForeground(Color.decode(Style.BLUE_CODE_COLOR));
     }//GEN-LAST:event_createAnAccountButtonMouseExited
 
-     /**
+    /**
      * Set red the text color when mouse click the button.
-     * 
+     *
      * @param evt Defaut event for Mouse Pressed.
      */
     private void createAnAccountButtonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createAnAccountButtonMousePressed
         this.createAnAccountButton.setForeground(Color.RED);
     }//GEN-LAST:event_createAnAccountButtonMousePressed
-    
+
     /**
      * Recover the original blue color when mouse exited of the button.
-     * 
+     *
      * @param evt Defaut event for Mouse Released.
      */
     private void createAnAccountButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createAnAccountButtonMouseReleased
         this.createAnAccountButton.setForeground(Color.decode(Style.BLUE_CODE_COLOR));
     }//GEN-LAST:event_createAnAccountButtonMouseReleased
-    
+
     /**
      * Changes Hide/show password icon if password is hidded or visible.
      *

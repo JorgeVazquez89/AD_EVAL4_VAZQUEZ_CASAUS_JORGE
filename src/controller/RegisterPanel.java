@@ -24,6 +24,8 @@ public class RegisterPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form RegisterPanel. RegisterPanel class constructor.
+     * 
+     * @param workPanel WorkPanel, its the work area of the APP.
      */
     public RegisterPanel(JPanel workPanel) {
         try {

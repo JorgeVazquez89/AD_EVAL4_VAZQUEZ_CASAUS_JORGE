@@ -30,6 +30,10 @@ public class AddProductsPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form AddProductsPanel. AddProductsPanel class Constructor.
+     * 
+     * @param workPanel WorkPanel, its the work area of the APP.
+     * @param user Its object that references a user row in DB. It matches with
+     * the product with the same name.
      */
     public AddProductsPanel(JPanel workPanel, User user) {
         try {

@@ -13,7 +13,7 @@ import resources.style.Style;
  * @version 1.0.
  * @see AddProductsPanel
  * @see AvabibleProductsPanel
- * @see BuyProductPanel
+ * @see BuyProductsPanel
  * @see LoadPanels
  * @see LoginPanel
  * @see ModifyProductsPanel
