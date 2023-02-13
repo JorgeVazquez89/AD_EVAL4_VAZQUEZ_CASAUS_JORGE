@@ -21,10 +21,8 @@ public class OrderProductRepository {
 
     /**
      * OrderProductRepository constructor.
-     *
-     * @throws Exception if cant connect to DB.
      */
-    public OrderProductRepository() throws Exception {
+    public OrderProductRepository() {
         this.dataBase = new DataBase();
     }
 

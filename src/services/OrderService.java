@@ -22,10 +22,8 @@ public class OrderService {
 
     /**
      * OrderService Constructor.
-     *
-     * @throws Exception if cant connect to DB.
      */
-    public OrderService() throws Exception {
+    public OrderService(){
         this.orderRepository = new OrderRepository();
     }
 

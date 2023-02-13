@@ -5,7 +5,6 @@ import dataBaseConnection.DataBase;
 import java.util.ArrayList;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import resources.en_translations.Translations;
 
 /**
  * ProductRepository Class.
@@ -23,10 +22,8 @@ public class ProductRepository {
 
     /**
      * ProductRepository constructor.
-     *
-     * @throws Exception if cant connect to DB.
      */
-    public ProductRepository() throws Exception {
+    public ProductRepository()  {
         this.dataBase = new DataBase();
     }
 
@@ -40,9 +37,6 @@ public class ProductRepository {
     public ArrayList<Product> findAll() throws Exception {
         Session session = this.dataBase.openDataBaseConnection();
         Query query = session.createQuery("FROM classes.Product p");
-        if (query.list().isEmpty()) {
-            throw new Exception(Translations.EMPTY_PRODUCT_TABLE_EXCEPTION);
-        }
         ArrayList<Product> productList = (ArrayList<Product>) query.list();
         this.dataBase.closeDataBaseConnection(session);
         return productList;
@@ -62,9 +56,6 @@ public class ProductRepository {
         Session session = this.dataBase.openDataBaseConnection();
         Query query = session.createQuery("FROM classes.Product p WHERE p.description =:description_parameter");
         query.setString("description_parameter", description);
-        if (query.list().isEmpty()) {
-            throw new Exception(Translations.PRODUCT_NOT_FOUND_EXCEPTION);
-        }
         Product product = (Product) query.list().get(FIRST_ITEM_OF_LIST);
         this.dataBase.closeDataBaseConnection(session);
         return product;

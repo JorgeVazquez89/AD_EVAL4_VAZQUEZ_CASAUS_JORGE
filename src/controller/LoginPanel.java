@@ -6,7 +6,6 @@ import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import resources.en_translations.Translations;
 import resources.style.Style;
-import services.TestConnectionService;
 import services.UserService;
 
 /**
@@ -21,7 +20,6 @@ import services.UserService;
  */
 public class LoginPanel extends javax.swing.JPanel {
 
-    private TestConnectionService testConnectionService;
     private UserService userService;
 
     /**
@@ -29,18 +27,11 @@ public class LoginPanel extends javax.swing.JPanel {
      *
      * @param workPanel WorkPanel, its the work area of the APP.
      */
-    public LoginPanel(JPanel workPanel) {
-        try {
-            this.userService = new UserService();
-            this.testConnectionService = new TestConnectionService();
-        } catch (Exception exception) {
-            setErrorLabel();
-            this.errorLabel.setText(exception.getMessage());
-        }
+    public LoginPanel(JPanel workPanel) {  
+        this.userService = new UserService();
         this.workPanel = workPanel;
         initComponents();
         setComponents();
-        testConnection();
     }
 
     /**
@@ -69,19 +60,6 @@ public class LoginPanel extends javax.swing.JPanel {
         this.emailTextField.setBackground(new java.awt.Color(0, 0, 0, 1));
         this.errorLabel.setVisible(false);
         this.successLabel.setVisible(false);
-    }
-
-    /**
-     * Sets the componets with specific behaviour.
-     */
-    public void testConnection() {
-        try {
-            this.testConnectionService.testConnection();
-        } catch (Exception exception) {
-            setErrorLabel();
-            this.errorLabel.setText(Translations.CANT_CONNECT_TO_DB_EXCEPTION);
-            return;
-        }
     }
 
     /**
@@ -359,7 +337,7 @@ public class LoginPanel extends javax.swing.JPanel {
                 setSuccessLabel();
                 User user = this.userService.getUserByEmail(email);
                 LoadPanels loadPanels = new LoadPanels(this.workPanel);
-                loadPanels.loadAvabibleProductsPanel(user);
+                loadPanels.loadAvailableProductsPanel(user);
             }
         } catch (Exception exception) {
             setErrorLabel();

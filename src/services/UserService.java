@@ -21,12 +21,9 @@ public class UserService {
 
     /**
      * UserService Constructor.
-     *
-     * @throws Exception if cant connect to DB.
      */
-    public UserService() throws Exception {
+    public UserService() {
         this.userRepository = new UserRepository();
-
     }
 
     /**

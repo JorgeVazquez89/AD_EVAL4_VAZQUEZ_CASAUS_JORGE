@@ -29,19 +29,15 @@ public class AddProductsPanel extends javax.swing.JPanel {
     private DefaultTableModel productTableModel;
 
     /**
-     * Creates new form AddProductsPanel. AddProductsPanel class Constructor.
-     * 
+     * Creates new form AddProductsPanel. 
+     * AddProductsPanel class Constructor.
+     *
      * @param workPanel WorkPanel, its the work area of the APP.
      * @param user Its object that references a user row in DB. It matches with
      * the product with the same name.
      */
     public AddProductsPanel(JPanel workPanel, User user) {
-        try {
-            this.productService = new ProductService();
-        } catch (Exception exception) {
-            setErrorLabel();
-            this.errorLabel.setText(exception.getMessage());
-        }
+        this.productService = new ProductService();
         this.user = user;
         this.productList = new ArrayList<>();
         initComponents();
@@ -605,7 +601,7 @@ public class AddProductsPanel extends javax.swing.JPanel {
      */
     private void showProductsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showProductsButtonActionPerformed
         LoadPanels loadPanels = new LoadPanels(this.workPanel);
-        loadPanels.loadAvabibleProductsPanel(this.user);
+        loadPanels.loadAvailableProductsPanel(this.user);
     }//GEN-LAST:event_showProductsButtonActionPerformed
 
     /**

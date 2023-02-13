@@ -20,10 +20,8 @@ public class DataBase {
 
     /**
      * Constructor of DataBase.
-     *
-     * @throws Exception that shows if the connection had any problem.
      */
-    public DataBase() throws Exception {
+    public DataBase() {
         this.sessionFactory = NewHibernateUtil.getSessionFactory();
     }
 
@@ -32,10 +30,8 @@ public class DataBase {
      *
      * @return the current session with all the necessary parameters as
      * Transaction setted.
-     *
-     * @throws Exception that shows if the connection had any problem.
      */
-    public Session openDataBaseConnection() throws Exception {
+    public Session openDataBaseConnection() {
         Session session = this.sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
         return session;

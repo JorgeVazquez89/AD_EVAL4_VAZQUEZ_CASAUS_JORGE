@@ -12,7 +12,7 @@ import resources.style.Style;
  * @author Jorge Vázquez Casaus.
  * @version 1.0.
  * @see AddProductsPanel
- * @see AvabibleProductsPanel
+ * @see AvailableProductsPanel
  * @see BuyProductsPanel
  * @see LoadPanels
  * @see LoginPanel
@@ -26,7 +26,8 @@ public class DashBoard extends javax.swing.JFrame {
     private int y;
 
     /**
-     * Creates new form DashBoard. DashBoard class Constructor.
+     * Creates new form DashBoard. 
+     * DashBoard class Constructor.
      */
     public DashBoard() {
         initComponents();

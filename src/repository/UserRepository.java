@@ -4,7 +4,6 @@ import classes.User;
 import dataBaseConnection.DataBase;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import resources.en_translations.Translations;
 
 /**
  * UserRepository Class.
@@ -22,10 +21,8 @@ public class UserRepository {
 
     /**
      * UserRepository constructor.
-     *
-     * @throws Exception if cant connect to DB.
      */
-    public UserRepository() throws Exception {
+    public UserRepository() {
         this.dataBase = new DataBase();
     }
 
@@ -39,9 +36,6 @@ public class UserRepository {
     public User findAll() throws Exception {
         Session session = this.dataBase.openDataBaseConnection();
         Query query = session.createQuery("FROM classes.User u");
-        if (query.list().isEmpty()) {
-            throw new Exception(Translations.EMPTY_USER_TABLE_EXCEPTION);
-        }
         User user = (User) query.list().get(FIRST_ITEM_OF_LIST);
         this.dataBase.closeDataBaseConnection(session);
         return user;
@@ -60,9 +54,6 @@ public class UserRepository {
         Session session = this.dataBase.openDataBaseConnection();
         Query query = session.createQuery("FROM classes.User u WHERE u.email =:email_parameter");
         query.setString("email_parameter", email);
-        if (query.list().isEmpty()) {
-            throw new Exception(Translations.INCORRECT_USER_OR_PASSWORD_EXCEPTION);
-        }
         User user = (User) query.list().get(FIRST_ITEM_OF_LIST);
         this.dataBase.closeDataBaseConnection(session);
         return user;
@@ -81,9 +72,6 @@ public class UserRepository {
         Session session = this.dataBase.openDataBaseConnection();
         Query query = session.createQuery("FROM classes.User u WHERE u.userName =:userName_parameter");
         query.setString("userName_parameter", userName);
-        if (query.list().isEmpty()) {
-            throw new Exception(Translations.INVALID_USERNAME_EXCEPTION);
-        }
         User user = (User) query.list().get(FIRST_ITEM_OF_LIST);
         this.dataBase.closeDataBaseConnection(session);
         return user;

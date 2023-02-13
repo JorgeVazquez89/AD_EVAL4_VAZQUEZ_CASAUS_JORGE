@@ -13,7 +13,7 @@ import resources.style.Style;
  * @author Jorge Vázquez Casaus.
  * @version 1.0.
  * @see AddProductsPanel
- * @see AvabibleProductsPanel
+ * @see AvailableProductsPanel
  * @see BuyProductsPanel
  * @see DashBoard
  * @see LoginPanel
@@ -63,18 +63,18 @@ public class LoadPanels {
     }
 
     /**
-     * Creates, load an paint AvabibleProductsPanel as Main GUI into DashBoard
+     * Creates, load an paint AvailableProductsPanel as Main GUI into DashBoard
      * workPanel.
 
      * @param user Its object that references a user row in DB. It matches with
      * the product with the same name.
      */
-    public void loadAvabibleProductsPanel(User user) {
-        AvabibleProductsPanel avabibleProductsPanel = new AvabibleProductsPanel(this.workPanel, user);
-        avabibleProductsPanel.setSize(Style.LOGIN_REGISTER_PANEL_WIDTH, Style.WORK_PANEL_HEIGHT);
-        avabibleProductsPanel.setLocation(Style.DEFAULT_COORD, Style.DEFAULT_COORD);
+    public void loadAvailableProductsPanel(User user) {
+        AvailableProductsPanel availableProductsPanel = new AvailableProductsPanel(this.workPanel, user);
+        availableProductsPanel.setSize(Style.LOGIN_REGISTER_PANEL_WIDTH, Style.WORK_PANEL_HEIGHT);
+        availableProductsPanel.setLocation(Style.DEFAULT_COORD, Style.DEFAULT_COORD);
         workPanel.removeAll();
-        workPanel.add(avabibleProductsPanel, BorderLayout.CENTER);
+        workPanel.add(availableProductsPanel, BorderLayout.CENTER);
         workPanel.revalidate();
         workPanel.repaint();
     }

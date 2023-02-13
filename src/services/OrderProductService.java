@@ -28,10 +28,8 @@ public class OrderProductService {
 
     /**
      * OrderProductService Constructor.
-     *
-     * @throws Exception if cant connect to DB.
      */
-    public OrderProductService() throws Exception {
+    public OrderProductService() {
         orderProductRepository = new OrderProductRepository();
     }
 

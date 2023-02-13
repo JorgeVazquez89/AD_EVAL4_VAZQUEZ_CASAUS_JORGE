@@ -28,12 +28,7 @@ public class RegisterPanel extends javax.swing.JPanel {
      * @param workPanel WorkPanel, its the work area of the APP.
      */
     public RegisterPanel(JPanel workPanel) {
-        try {
-            this.userService = new UserService();
-        } catch (Exception exception) {
-            setErrorLabel();
-            this.errorLabel.setText(exception.getMessage());
-        }
+        this.userService = new UserService();
         this.workPanel = workPanel;
         initComponents();
         setComponents();

@@ -23,10 +23,8 @@ public class ProductService {
 
     /**
      * ProductService Constructor.
-     *
-     * @throws Exception if cant connect to DB.
      */
-    public ProductService() throws Exception {
+    public ProductService() {
         this.productRepository = new ProductRepository();
     }
 

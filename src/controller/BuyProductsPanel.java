@@ -39,30 +39,26 @@ public class BuyProductsPanel extends javax.swing.JPanel {
     private DefaultTableModel shoppingTableModel;
 
     /**
-     * Creates new form BuyProductsPanel. AddProductsPanel class Constructor.
-     * 
+     * Creates new form BuyProductsPanel. 
+     * BuyProductsPanel class Constructor.
+     *
      * @param workPanel WorkPanel, its the work area of the APP.
      * @param user Its object that references a user row in DB. It matches with
      * the product with the same name.
      */
     public BuyProductsPanel(JPanel workPanel, User user) {
-        try {
-            this.productService = new ProductService();
-            this.orderService = new OrderService();
-            this.orderProductService = new OrderProductService();
-            this.user = user;
-            this.productList = new ArrayList<>();
-            this.buyedProducts = new HashMap<>();
-            initComponents();
-            setComponents();
-            getAll();
-            enableAdminPanel();
-            setComboBox();
-            printProducts();
-        } catch (Exception exception) {
-            setErrorLabel();
-            this.errorLabel.setText(exception.getMessage());
-        }
+        this.productService = new ProductService();
+        this.orderService = new OrderService();
+        this.orderProductService = new OrderProductService();
+        this.user = user;
+        this.productList = new ArrayList<>();
+        this.buyedProducts = new HashMap<>();
+        initComponents();
+        setComponents();
+        getAll();
+        enableAdminPanel();
+        setComboBox();
+        printProducts();
     }
 
     /**
@@ -232,7 +228,7 @@ public class BuyProductsPanel extends javax.swing.JPanel {
 
     /**
      * Calls orderProductService and try to save a new product in DB.
-     * 
+     *
      * @param orderProductList Is a Set that contains the new objects
      * OrderProduct that will be stored in DB. This OrderProducts are the list
      * of products asociated to an order.
@@ -326,7 +322,7 @@ public class BuyProductsPanel extends javax.swing.JPanel {
         orderLabelSeparator = new javax.swing.JSeparator();
         addButton = new javax.swing.JButton();
         clearButton = new javax.swing.JButton();
-        avabibleProductsLabel = new javax.swing.JLabel();
+        availableProductsLabel = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         successLabel = new javax.swing.JLabel();
         actionBarPanel = new javax.swing.JPanel();
@@ -543,11 +539,11 @@ public class BuyProductsPanel extends javax.swing.JPanel {
 
         inputPanel.add(componentsPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 1240, 250));
 
-        avabibleProductsLabel.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        avabibleProductsLabel.setForeground(new java.awt.Color(0, 0, 0));
-        avabibleProductsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        avabibleProductsLabel.setText("AVABIBLE PRODUCTS");
-        inputPanel.add(avabibleProductsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 1240, -1));
+        availableProductsLabel.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        availableProductsLabel.setForeground(new java.awt.Color(0, 0, 0));
+        availableProductsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        availableProductsLabel.setText("AVAILABLE PRODUCTS");
+        inputPanel.add(availableProductsLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 1240, -1));
         inputPanel.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 322, 1220, 10));
 
         successLabel.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -826,13 +822,13 @@ public class BuyProductsPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_buyButtonMouseReleased
 
     /**
-     * Loads the AvabibleProducts panel.
+     * Loads the AvailableProducts panel.
      *
      * @param evt Default event for Action Performed.
      */
     private void showProductsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showProductsButtonActionPerformed
         LoadPanels loadPanels = new LoadPanels(this.workPanel);
-        loadPanels.loadAvabibleProductsPanel(this.user);
+        loadPanels.loadAvailableProductsPanel(this.user);
     }//GEN-LAST:event_showProductsButtonActionPerformed
 
     /**
@@ -943,7 +939,7 @@ public class BuyProductsPanel extends javax.swing.JPanel {
     private javax.swing.JPanel adminPanel;
     private javax.swing.JLabel adminPanelLabel;
     private javax.swing.JSeparator adminPanelSepataror;
-    private javax.swing.JLabel avabibleProductsLabel;
+    private javax.swing.JLabel availableProductsLabel;
     private javax.swing.JButton buyButton;
     private javax.swing.JPanel buyPanel;
     private javax.swing.JButton clearButton;

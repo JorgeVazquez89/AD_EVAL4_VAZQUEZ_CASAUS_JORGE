@@ -12,7 +12,7 @@ import resources.style.Style;
 import services.ProductService;
 
 /**
- * AvabibleProductsPanel Class.
+ * AvailableProductsPanel Class.
  *
  * Class to define the GUI that shows all the products stored in DB.
  *
@@ -21,27 +21,22 @@ import services.ProductService;
  * @see LoadPanels
  * @since 16/12/2022.
  */
-public class AvabibleProductsPanel extends javax.swing.JPanel {
+public class AvailableProductsPanel extends javax.swing.JPanel {
 
     private ProductService productService;
     private User user;
     private ArrayList<Product> productList;
 
     /**
-     * Creates new form AvabibleProductsPanel. AddProductsPanel class
-     * Constructor.
+     * Creates new form AvailableProductsPanel. 
+     * AvailableProductsPanel class constructor.
      *
      * @param workPanel WorkPanel, its the work area of the APP.
      * @param user Its object that references a user row in DB. It matches with
      * the product with the same name.
      */
-    public AvabibleProductsPanel(JPanel workPanel, User user) {
-        try {
-            this.productService = new ProductService();
-        } catch (Exception exception) {
-            setErrorLabel();
-            this.errorLabel.setText(exception.getMessage());
-        }
+    public AvailableProductsPanel(JPanel workPanel, User user) {
+        this.productService = new ProductService();
         this.user = user;
         this.productList = new ArrayList<>();
         initComponents();
@@ -176,7 +171,7 @@ public class AvabibleProductsPanel extends javax.swing.JPanel {
         headerLabel.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         headerLabel.setForeground(new java.awt.Color(0, 0, 0));
         headerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        headerLabel.setText("AVABIBLE PRODUCTS");
+        headerLabel.setText("AVAILABLE PRODUCTS");
         workPanel.add(headerLabel);
         headerLabel.setBounds(0, 90, 1260, 40);
 
@@ -502,7 +497,7 @@ public class AvabibleProductsPanel extends javax.swing.JPanel {
      */
     private void showProductsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showProductsButtonActionPerformed
         LoadPanels loadPanels = new LoadPanels(this.workPanel);
-        loadPanels.loadAvabibleProductsPanel(this.user);
+        loadPanels.loadAvailableProductsPanel(this.user);
     }//GEN-LAST:event_showProductsButtonActionPerformed
 
     /**
